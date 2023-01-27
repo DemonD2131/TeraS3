@@ -1,0 +1,25 @@
+{
+    "name": "Sunloss",
+    "description": "You lose hunger in the sunlight. (MUHSROOM)",
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:feed",
+        "food": -1,
+        "saturation": -1
+    },
+    "interval": 40,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+        "type": "origins:resource",
+        "resource": "tera:morsellus/form",
+        "compare_to": 1,
+        "comparison": "=="
+            },
+            {
+                "type": "origins:exposed_to_sun"
+            }
+        ]
+    }
+}

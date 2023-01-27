@@ -1,0 +1,519 @@
+{
+    "name": "Flora Form",
+    "description": "Gain saturation in sunlight, Sense others touching grass, climb and shear using your fists.",
+    "type": "origins:multiple",
+    "satgain":{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:feed",
+        "food": 1,
+        "saturation": 1
+    },
+    "interval": 40,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+        "type": "origins:resource",
+        "resource": "tera:morsellus/form",
+        "compare_to": 0,
+        "comparison": "=="
+            },
+            {
+                "type": "origins:exposed_to_sun"
+            }
+        ]
+    }
+            },
+    "sensegrass":{
+        "type": "origins:entity_glow",
+        "bientity_condition":{
+        "type": "origins:actor_condition",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "tera:morsellus/form",
+            "compare_to": 0,
+            "comparison": "=="
+        }
+    },
+        "entity_condition": {
+            "type": "origins:in_block",
+            "block_condition": {
+                "type": "origins:block",
+                "block": "minecraft:grass"
+            }
+        }
+    },
+    "climb": {
+        "type": "origins:climbing",
+        "hold_condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:block_collision",
+                  "offset_x": 0.01,
+                  "offset_z": 0.01,
+                  "offset_y": 0
+                },
+                {
+                  "type": "origins:block_collision",
+                  "offset_x": -0.01,
+                  "offset_z": -0.01,
+                  "offset_y": 0
+                }
+              ]
+            }
+          ]
+        },
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:collided_horizontally"
+            },
+            {
+                "type": "origins:resource",
+                "resource": "tera:morsellus/form",
+                "compare_to": 0,
+                "comparison": "=="
+            },
+            {
+                "type": "origins:sneaking"
+            }
+          ]
+        }
+    },
+    "oakleaves":{
+		"condition": {
+			"type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+		},
+		"type": "origins:action_on_block_break",
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:oak_leaves\",Count:1}}"
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:oak_leaves"
+		},
+		"only_when_harvested": false
+    },
+    "spruceleaf":{
+		"condition": {
+			"type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+		},
+		"type": "origins:action_on_block_break",
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:spruce_leaves\",Count:1}}"
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:spruce_leaves"
+		},
+		"only_when_harvested": false
+    },
+    "bitchleaves":{
+		"condition": {
+			"type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+		},
+		"type": "origins:action_on_block_break",
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:birch_leaves\",Count:1}}"
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:birch_leaves"
+		},
+		"only_when_harvested": false
+    },
+    "jungleleaves":{
+		"condition": {
+			"type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+		},
+		"type": "origins:action_on_block_break",
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:jungle_leaves\",Count:1}}"
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:jungle_leaves"
+		},
+		"only_when_harvested": false
+    },
+    "acacialeaves":{
+		"condition": {
+			"type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+		},
+		"type": "origins:action_on_block_break",
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:acacia_leaves\",Count:1}}"
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:acacia_leaves"
+		},
+		"only_when_harvested": false
+    },
+    "darkoakleaves":{
+		"condition": {
+			"type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+		},
+		"type": "origins:action_on_block_break",
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:dark_oak_leaves\",Count:1}}"
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:dark_oak_leaves"
+		},
+		"only_when_harvested": false
+    },
+    "mangroveleaves":{
+		"condition": {
+			"type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+		},
+		"type": "origins:action_on_block_break",
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:mangrove_leaves\",Count:1}}"
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:mangrove_leaves"
+		},
+		"only_when_harvested": false
+    },
+    "azalealeaves":{
+		"condition": {
+			"type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+		},
+		"type": "origins:action_on_block_break",
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:azalea_leaves\",Count:1}}"
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:azalea_leaves"
+		},
+		"only_when_harvested": false
+    },
+    "floweringazalealeaves":{
+		"condition": {
+			"type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+		},
+		"type": "origins:action_on_block_break",
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:flowering_azalea_leaves\",Count:1}}"
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:flowering_azalea_leaves"
+		},
+		"only_when_harvested": false
+    },
+    "grass":{
+		"condition": {
+			"type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+		},
+		"type": "origins:action_on_block_break",
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:grass\",Count:1}}"
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:grass"
+		},
+		"only_when_harvested": false
+    },
+    "tallgras":{
+		"condition": {
+			"type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+		},
+		"type": "origins:action_on_block_break",
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:tall_grass\",Count:1}}"
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:tall_grass"
+		},
+		"only_when_harvested": false
+    },
+    "vine":{
+		"condition": {
+			"type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+		},
+		"type": "origins:action_on_block_break",
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:vine\",Count:1}}"
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:vine"
+		},
+		"only_when_harvested": false
+    },
+    "shearsheep":{
+        "type": "origins:action_on_entity_use",
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "execute as @s run data modify entity @s Sheared set value 1",
+                        "permission_level": 4
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "summon minecraft:item ~ ~0.5 ~ {Item:{id:\"minecraft:white_wool\",Count:2}}",
+                        "permission_level": 4
+                    }
+                ]
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:nbt",
+                "nbt": "{Sheared:0b}"
+            }
+        },
+        "item_condition": {
+            "type": "origins:empty"
+        },
+        "hands": [
+            "main_hand"
+        ],
+        "condition": {
+            "type": "origins:resource",
+            "resource": "tera:morsellus/form",
+            "compare_to": 0,
+            "comparison": "=="
+        }
+    },
+    "breakleaves":{
+        "type": "origins:modify_break_speed",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "minecraft:leaves"
+        },
+        "modifier": {
+            "operation": "add_base_early",
+            "value": 10
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+            "type": "origins:resource",
+            "resource": "tera:morsellus/form",
+            "compare_to": 0,
+            "comparison": "=="
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                }
+        ]
+    }
+    }
+}
+

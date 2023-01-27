@@ -1,0 +1,125 @@
+{
+    "name": "Mushroom form",
+    "description": "Gain saturation while in the dark. Can sense other creatures on mossy cobblestone. Haste 1 while underground in caves. Can break stone with fists.",
+    "type": "origins:multiple",
+    "satgain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:feed",
+            "food": 1,
+            "saturation": 1
+        },
+        "interval": 40,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+            "type": "origins:resource",
+            "resource": "tera:morsellus/form",
+            "compare_to": 1,
+            "comparison": "=="
+                },
+                {
+                    "type": "origins:brightness",
+                    "comparison": "<=",
+                    "compare_to": 0.2
+                }
+            ]
+        }
+    },
+    "sensemosscobble": {
+        "type": "origins:entity_glow",
+        "entity_condition": {
+            "type": "origins:on_block",
+            "block_condition": {
+                "type": "origins:block",
+                "block": "minecraft:mossy_cobblestone"
+            }
+        },
+            "condition": {
+                "type": "origins:resource",
+                "resource": "tera:morsellus/form",
+                "compare_to": 1,
+                "comparison": "=="
+            }
+    },
+    "cavehaste":{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:haste",
+                "duration": 20,
+                "amplifier": 0,
+                "show_particles": false,
+                "show_icon": false
+            }
+        },
+        "interval": 10,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+            "type": "origins:resource",
+            "resource": "tera:morsellus/form",
+            "compare_to": 1,
+            "comparison": "=="
+                },
+                {
+                    "type": "origins:exposed_to_sky",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:on_block",
+                    "block_condition": {
+                        "type": "origins:in_tag",
+                        "tag": "minecraft:base_stone_overworld"
+                    }
+                }
+            ]
+        }
+    },
+    "stonemine":{
+        "type": "origins:modify_harvest",
+        "allow": true,
+        "block_condition": {
+          "type": "origins:in_tag",
+          "tag": "minecraft:base_stone_overworld"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "tera:morsellus/form",
+            "compare_to": 1,
+            "comparison": "=="
+        }
+    },
+    "stoneminespeed":{
+        "type": "origins:modify_break_speed",
+        "block_condition": {
+          "type": "origins:in_tag",
+          "tag": "origins:natural_stone"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+          "type": "origins:using_effective_tool",
+          "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:morsellus/form",
+                    "compare_to": 1,
+                    "comparison": "=="
+
+                }
+        ]
+        },
+        "modifier": {
+          "name": "Strong Arms stone break speed bonus",
+          "value": 0.06,
+          "operation": "addition"
+        },
+        "hidden": true
+    }
+}

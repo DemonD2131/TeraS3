@@ -2,7 +2,12 @@
 	"powers": [
 		"tera:morsellus/form",
 		"tera:morsellus/switch",
-		"tera:morsellus/plant_growth"
+		"tera:morsellus/plant_growth",
+		"tera:morsellus/flora",
+		"tera:morsellus/clausphobia",
+		"tera:morsellus/overgrow",
+		"tera:morsellus/mushroom",
+		"tera:morsellus/sunloss"
 	],
 	"icon": "minecraft:air",
 	"order": 10,
