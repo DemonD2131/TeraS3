@@ -1,0 +1,12 @@
+{
+	"powers": [
+		"tera:morsellus/form",
+		"tera:morsellus/switch",
+		"tera:morsellus/plant_growth"
+	],
+	"icon": "minecraft:air",
+	"order": 10,
+	"impact": 0,
+	"name": "Morsellus",
+	"description": "DESCRIPTION HERE"
+}
