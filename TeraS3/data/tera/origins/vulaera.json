@@ -1,0 +1,16 @@
+{
+	"powers": [
+        "tera:vulaera/flap",
+        "tera:vulaera/energy",
+        "tera:vulaera/windblast",
+        "origins:like_air",
+        "tera:vulaera/slow_falling",
+        "tera:vulaera/egg",
+        "tera:vulaera/weight"
+	],
+	"icon": "minecraft:air",
+	"order": 10,
+	"impact": 0,
+	"name": "Vulaera",
+	"description": "DESCRIPTION HERE"
+}

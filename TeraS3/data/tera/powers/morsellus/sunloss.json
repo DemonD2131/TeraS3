@@ -7,7 +7,7 @@
         "food": -1,
         "saturation": -1
     },
-    "interval": 40,
+    "interval": 300,
     "condition": {
         "type": "origins:and",
         "conditions": [

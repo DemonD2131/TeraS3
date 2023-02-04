@@ -1,6 +1,7 @@
 {
   "replace": false,
   "origins": [
-    "tera:morsellus"
+    "tera:morsellus",
+    "tera:vulaera"
   ]
 }
