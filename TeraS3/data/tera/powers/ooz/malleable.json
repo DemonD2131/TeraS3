@@ -1,0 +1,13 @@
+{
+    "name": "Slime malleability",
+    "description": "Compressing yourself slightly (crouching) can improve your body strucutre, recovering health.",
+    "type": "origins:action_over_time",
+    "entity_action":{
+        "type": "origins:heal",
+        "amount": 1
+    },
+    "condition": {
+        "type": "origins:sneaking"
+    },
+    "interval": 100
+}

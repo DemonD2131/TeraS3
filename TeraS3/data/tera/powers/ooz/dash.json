@@ -1,0 +1,36 @@
+{
+    "name": "Dash Jump",
+    "description": "Launch yourself forward. Get that runners start!",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:add_velocity",
+                "z": 1.5,
+                "space": "local",
+                "y": 0.5
+            },
+            {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:entity.slime.jump master @a[distance=0..10] ~ ~ ~ 99 0"
+            }
+        ]
+    },
+    "cooldown": 240,
+    "key": {
+        "key": "key.origins.secondary_active"
+    },
+    "hud_render": {
+        "should_render": true,
+        "bar_index": 5,
+        "sprite_location": "origins:textures/gui/resource_bar.png",
+        "condition": {
+                "type": "origins:resource",
+                "resource": "tera:ooz/dash",
+                "comparison": ">",
+                "compare_to": 0
+            
+        }
+    }
+}

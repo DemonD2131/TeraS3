@@ -1,0 +1,128 @@
+{
+    "name": "Slime's pool",
+    "description": "You have a pool of slime giving you speed at low amounts, nothing at medium, and resistance at large. Your slime nourishes and nourishes you in water. It sweats off in the heat.",
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "hud_render":{
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 1
+        }
+    },
+    "effects":{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "tera:ooz/slime_resource",
+                        "compare_to": 25,
+                        "comparison": "<="
+                    },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:speed",
+                            "amplifier": 0,
+                            "duration": 20,
+                            "is_ambient": false,
+                            "show_particles": false,
+                            "show_icon": true
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "tera:ooz/slime_resource",
+                        "compare_to": 75,
+                        "comparison": ">="
+                    },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:resistance",
+                            "amplifier": 0,
+                            "duration": 20,
+                            "is_ambient": false,
+                            "show_particles": false,
+                            "show_icon": true
+                        }
+                    }
+                }
+            ]
+        },
+        "interval": 10
+    },
+    "gain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "tera:ooz/slime_resource",
+            "change": 1
+        },
+        "interval": 80,
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": ">=",
+            "compare_to": 0.1
+        }
+    },
+    "loss": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "tera:ooz/slime_resource",
+            "change": -1
+        },
+        "interval": 280,
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">=",
+                    "compare_to": 0.1,
+                    "inverted": true
+                },
+                {
+                    "type": "origins:exposed_to_sun"
+                },
+                {
+                    "type": "origins:in_rain",
+                    "inverted": true
+                }
+            ]
+                },
+                {
+                    "type": "origins:on_fire"
+                }
+            ]
+        }
+    },
+    "feed": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:feed",
+            "food": 2,
+            "saturation": 1
+        },
+        "interval": 160,
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": ">=",
+            "compare_to": 0.1
+        }
+    }
+}

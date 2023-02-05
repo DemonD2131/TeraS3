@@ -1,0 +1,15 @@
+{
+	"powers": [
+        "tera:ooz/lateral",
+        "tera:ooz/dash",
+        "origins:fall_immunity",
+        "tera:ooz/slime",
+        "tera:ooz/malleable",
+        "tera:ooz/sink"
+	],
+	"icon": "minecraft:air",
+	"order": 10,
+	"impact": 0,
+	"name": "Oozekki",
+	"description": "DESCRIPTION HERE"
+}

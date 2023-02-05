@@ -1,0 +1,17 @@
+{
+    "name": "Sink",
+    "description": "Density! Physics! Water! You sink!",
+    "type": "origins:multiple",
+    "sink":{
+    "type": "origins:ignore_water"
+    },
+    "slowfall":{
+        "type": "apoli:modify_falling",
+    "velocity": 0.01,
+    "take_fall_damage": false,
+    "condition": {
+        "type": "origins:submerged_in",
+        "fluid": "minecraft:water"
+    }
+}
+}

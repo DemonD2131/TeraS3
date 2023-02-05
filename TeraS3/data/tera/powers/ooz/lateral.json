@@ -1,0 +1,22 @@
+{
+    "name": "Lateral Jump",
+    "description": "Piston yourself far into the air, laterally!",
+    "type": "origins:launch",
+	"sound": "minecraft:entity.slime.jump",
+	"speed": 1.5,
+    "cooldown": 240,
+    "key": {
+        "key": "key.origins.primary_active"
+    },
+    "hud_render": {
+        "should_render": true,
+        "bar_index": 4,
+        "sprite_location": "origins:textures/gui/resource_bar.png",
+        "condition": {
+                "type": "origins:resource",
+                "resource": "tera:ooz/lateral",
+                "comparison": ">",
+                "compare_to": 0
+        }
+    }
+}
