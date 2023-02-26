@@ -1,0 +1,20 @@
+{
+	"powers": [
+        "tera:khaquetos/stealth",
+        "tera:khaquetos/form",
+        "tera:khaquetos/switch",
+        "tera:khaquetos/armor",
+        "tera:khaquetos/burrow",
+        "tera:khaquetos/burrow_overlay",
+        "tera:khaquetos/armorloss",
+        "tera:khaquetos/climb",
+        "tera:khaquetos/breath",
+        "tera:khaquetos/speed",
+        "tera:khaquetos/slowness"
+	],
+	"icon": "minecraft:air",
+	"order": 10,
+	"impact": 0,
+	"name": "Khaquetos",
+	"description": "DESCRIPTION HERE"
+}

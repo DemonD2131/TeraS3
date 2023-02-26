@@ -1,0 +1,38 @@
+{
+    "name": "Adapting lungs",
+    "description": "Hold your breath for twice as long. WATER FORM",
+    "type": "origins:multiple",
+    "breath":{
+        "type": "origins:action_over_time",
+        "entity_action":{
+            "type": "origins:gain_air",
+            "value": 10
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "tera:khaquetos/form",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "watervision":{
+        "type": "origins:night_vision",
+        "strength": 1.0,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:khaquetos/form",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        }
+    }
+}

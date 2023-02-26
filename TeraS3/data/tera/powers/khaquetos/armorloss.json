@@ -1,0 +1,138 @@
+{
+    "name": "Wet sand",
+    "description": "Lose defense while being in water or rain. SAND FORM",
+    "type": "origins:multiple",
+    "resource":{
+        "type": "origins:resource",
+        "min": 0,
+        "max": 15,
+        "hud_render": {
+        "should_render": false
+        }
+    },
+    "particle":{
+        "type": "origins:particle",
+        "particle": "minecraft:underwater",
+        "frequency": 4,
+        "visible_in_first_person": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:khaquetos/armorloss_resource",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:khaquetos/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                }
+            ]
+        }
+    },
+    "water":{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:fluid_height",
+                "fluid": "minecraft:water",
+                "comparison": ">=",
+                "compare_to": 0.4
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "tera:khaquetos/armorloss_resource",
+                "change": 15,
+                "operation": "set"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "tera:khaquetos/armorloss_resource",
+                "change": 2,
+                "operation": "add"
+            }
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:khaquetos/form",
+                    "compare_to": 0,
+                    "comparison": "=="
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:fluid_height",
+                            "fluid": "minecraft:water",
+                            "comparison": ">=",
+                            "compare_to": 0.1
+                        },
+                        {
+                            "type": "origins:in_rain"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+                "type": "origins:change_resource",
+                "resource": "tera:khaquetos/armorloss_resource",
+                "change": -1,
+                "operation": "add"
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">=",
+                    "compare_to": 0.1,
+                    "inverted": true
+                },
+                {
+                    "type": "origins:in_rain",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "attribute": {
+        "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.armor",
+        "operation": "addition",
+        "value": -4
+    },
+    "tick_rate": 10,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "tera:khaquetos/form",
+                "compare_to": 0,
+                "comparison": "=="
+            },
+            {
+                "type": "origins:resource",
+                "resource": "tera:khaquetos/armorloss_resource",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        ]
+    }
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "name": "Stealth",
+    "description": "Turn invisible for a few seconds. Primary key.",
+    "type": "origins:multiple",
+    "invisibility": {
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "tera:khaquetos/stealth_resource",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "resource":{
+        "type": "origins:resource",
+        "min": 0,
+        "max": 15,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
+            "bar_index": 12
+        }
+    },
+    "trigger":{
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "tera:khaquetos/stealth_resource",
+            "change": 15,
+            "operation": "set"
+        },
+        "cooldown": 600,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 7
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "tera:khaquetos/stealth_resource",
+            "change": -1
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "tera:khaquetos/stealth_resource",
+            "compare_to": 0,
+            "comparison": ">"
+        }
+    }
+}

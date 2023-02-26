@@ -1,0 +1,43 @@
+{
+    "name": "Viscosity",
+    "description": "Gain slowness on land. WATER FORM",
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 10,
+    "duration_per_stack": 5,
+    "effects": [
+        {
+            "effect": "minecraft:slowness",
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+        }
+    ],
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "tera:khaquetos/form",
+                "compare_to": 1,
+                "comparison": "=="
+            },
+            {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">=",
+                    "compare_to": 0.1,
+                    "inverted": true
+                },
+                {
+                    "type": "origins:in_rain",
+                    "inverted": true
+                }
+                ]
+            }
+        ]
+    }
+}

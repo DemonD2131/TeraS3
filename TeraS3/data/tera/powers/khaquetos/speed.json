@@ -1,0 +1,76 @@
+{
+    "name": "Fluid motions",
+    "description": "Swim faster in water and mine as normal whilst submerged. WATER FORM",
+    "type": "origins:multiple",
+    "waterspeed":{
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+          "attribute": "additionalentityattributes:water_speed",
+          "value": 1.5,
+          "operation": "multiply_base"
+        },
+        "tick_rate": 10,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "tera:khaquetos/form",
+            "compare_to": 1,
+            "comparison": "=="
+        }
+    },
+    "underwater": {
+      "type": "origins:modify_break_speed",
+      "modifier": {
+        "operation": "multiply_total",
+        "value": 4
+      },
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+          },
+          {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:aqua_affinity",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:resource",
+            "resource": "tera:khaquetos/form",
+            "compare_to": 1,
+            "comparison": "=="
+          }
+        ]
+      }
+    },
+    "ungrounded": {
+      "type": "origins:modify_break_speed",
+      "modifier": {
+        "operation": "multiply_total",
+        "value": 4
+      },
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:on_block",
+            "inverted": true
+          },
+          {
+            "type": "origins:resource",
+            "resource": "tera:khaquetos/form",
+            "compare_to": 1,
+            "comparison": "=="
+        }
+        ]
+      }
+    }
+}

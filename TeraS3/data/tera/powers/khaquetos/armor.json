@@ -1,0 +1,17 @@
+{
+    "name": "Sand Armor",
+    "description": "Sand form gains some natural defenses. SAND FORM",
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.armor",
+        "operation": "addition",
+        "value": 3
+    },
+    "tick_rate": 10,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "tera:khaquetos/form",
+        "comparison": "==",
+        "compare_to": 0
+    }
+}

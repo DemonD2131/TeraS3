@@ -1,0 +1,49 @@
+{
+    "name": "Sand's adaptations",
+    "description": "Use the secondary key to toggle your sand capabilities, allowing you to both climb sheer walls and move freely through sand. SAND FORM",
+    "type": "origins:multiple",
+    "burrow":{
+        "type": "origins:phasing",
+        "blacklist": true,
+        "render_type": "blindness",
+        "view_distance": 10,
+        "block_condition": {
+          "type": "origins:in_tag",
+          "tag": "tera:sand",
+          "inverted": true
+        },
+        "phase_down_condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:sneaking"
+            },
+            {
+              "type": "origins:on_block"
+            }
+          ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "tera:khaquetos/burrow_sandize"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "tera:khaquetos/form",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "sandize":{
+        "type": "origins:toggle",
+        "hidden": true,
+        "key": {
+          "key": "key.origins.secondary_active"
+        }
+    }
+}
