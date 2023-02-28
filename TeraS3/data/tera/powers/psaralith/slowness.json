@@ -1,0 +1,45 @@
+{
+    "name": "Static loss",
+    "description": "Being near water or copper loses some of your charge lowering your speed.",
+    "type": "origins:action_over_time",
+    "entity_action":{
+        "type": "origins:apply_effect",
+        "effect": {
+            "effect": "minecraft:slowness",
+            "duration": 30,
+            "amplifier": 0,
+            "show_particles": false
+        }
+    },
+    "interval": 10,
+    "condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+        "type": "origins:block_in_radius",
+        "block_condition": {
+                    "type": "origins:fluid",
+                    "fluid_condition": {
+                        "type": "origins:in_tag",
+                        "tag": "minecraft:water"
+                    }
+                },
+                "radius": 5,
+                "shape": "cube",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+            "type": "origins:block_in_radius",
+            "block_condition": {
+                        "type": "origins:in_tag",
+                        "tag": "tera:copper"
+                    },
+                    "radius": 5,
+                    "shape": "cube",
+                    "comparison": ">",
+                    "compare_to": 0
+            }
+        ]
+    }
+}

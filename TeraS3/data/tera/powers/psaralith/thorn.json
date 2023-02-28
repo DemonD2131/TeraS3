@@ -1,0 +1,18 @@
+{
+    "name": "Static Shock",
+    "description": "You have thorns when damaged!",
+    "type": "origins:attacker_action_when_hit",
+    "entity_action": {
+       "type": "origins:damage",
+       "amount": 1.5,
+       "source": {
+          "name": "thorns",
+          "bypasses_armor": true
+       }
+    },
+    "damage_condition": {
+       "type": "origins:projectile",
+       "inverted": true
+    },
+    "cooldown": 0
+ }

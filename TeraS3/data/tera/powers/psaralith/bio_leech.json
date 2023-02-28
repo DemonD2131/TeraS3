@@ -1,0 +1,42 @@
+{
+    "name": "Bio Leech",
+    "description": "Stare down an enemy to siphon their health for food and saturation.",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:raycast",
+        "distance": 40,
+        "block": false,
+        "entity": true,
+        "shape_type": "visual",
+        "fluid_handling": "any",
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:damage",
+                "amount": 1,
+                "source": {
+                    "name": "magic.player",
+                    "fire": false,
+                    "bypasses_armor": true
+                }
+            }
+        },
+        "hit_action": {
+            "type": "origins:feed",
+            "food": 2,
+            "saturation": 0
+        },
+        "command_along_ray": "particle minecraft:damage_indicator",
+        "command_step": 1,
+        "command_along_ray_only_on_hit": true
+    },
+    "cooldown": 160,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+        "bar_index": 5
+    },
+    "key": {
+        "key": "key.origins.primary_active"
+    }
+}

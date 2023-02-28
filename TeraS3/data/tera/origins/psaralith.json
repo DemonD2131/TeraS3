@@ -1,0 +1,16 @@
+{
+	"powers": [
+        "tera:psaralith/bio_leech",
+        "tera:psaralith/blitz",
+        "origins:like_air",
+        "tera:psaralith/sense",
+        "tera:psaralith/speed",
+        "tera:psaralith/thorn",
+        "tera:psaralith/slowness"
+	],
+	"icon": "minecraft:air",
+	"order": 10,
+	"impact": 0,
+	"name": "Psaralith",
+	"description": "DESCRIPTION HERE"
+}
