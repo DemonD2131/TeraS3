@@ -1,0 +1,18 @@
+{
+	"powers": [
+        "tera:pyralisk/switch",
+        "tera:pyralisk/firewalk",
+        "tera:pyralisk/form",
+        "tera:pyralisk/lava",
+        "tera:pyralisk/slowness",
+        "tera:pyralisk/riptide",
+        "tera:pyralisk/water",
+        "origins:like_water",
+        "tera:pyralisk/fireweakness"
+	],
+	"icon": "minecraft:air",
+	"order": 10,
+	"impact": 0,
+	"name": "Pyralisk",
+	"description": "DESCRIPTION HERE"
+}

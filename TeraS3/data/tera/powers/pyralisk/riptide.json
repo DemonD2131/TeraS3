@@ -1,0 +1,33 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:add_velocity",
+        "z": 1.5,
+        "space": "local"
+    },
+    "cooldown": 80,
+    "hud_render":{
+        "should_render": true,
+        "bar_index": 1
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            { 
+      "type": "origins:submerged_in",
+      "fluid": "water"
+        },
+        {
+            "type": "origins:resource",
+            "resource": "tera:pyralisk/form",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    ]
+    },
+    "name": "Tidewalk",
+    "key": {
+        "key": "key.origins.primary_active"
+    },
+    "description": "While submered under water you can press your primary key to proppel you forwards. WATER FORM"
+    }

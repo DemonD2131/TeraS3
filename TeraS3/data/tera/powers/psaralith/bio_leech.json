@@ -23,8 +23,8 @@
         },
         "hit_action": {
             "type": "origins:feed",
-            "food": 2,
-            "saturation": 0
+            "food": 3,
+            "saturation": 1
         },
         "command_along_ray": "particle minecraft:damage_indicator",
         "command_step": 1,

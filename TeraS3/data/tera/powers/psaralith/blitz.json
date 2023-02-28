@@ -42,6 +42,6 @@
     "condition": {
         "type": "origins:food_level",
         "comparison": ">",
-        "compare_to": 0
+        "compare_to": 5
     }
 }

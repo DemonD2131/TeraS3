@@ -20,7 +20,7 @@
                     }
                 },
                 "inverted": true,
-                "radius": 5,
+                "radius": 2,
                 "shape": "cube",
                 "comparison": ">",
                 "compare_to": 0
@@ -32,7 +32,7 @@
                         "tag": "tera:copper"
                     },
                     "inverted": true,
-                    "radius": 5,
+                    "radius": 2,
                     "shape": "cube",
                     "comparison": ">",
                     "compare_to": 0

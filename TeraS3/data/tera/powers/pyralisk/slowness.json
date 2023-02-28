@@ -1,0 +1,40 @@
+{
+    "name": "Cool Hardenning",
+    "description": "Being in water or the rain hardens your joints giving you slowness 2! LAVA FORM",
+    "type": "origins:action_over_time",
+    "entity_action":{
+        "type": "origins:apply_effect",
+        "effect": {
+            "effect": "minecraft:slowness",
+            "duration": 30,
+            "amplifier": 1,
+            "show_particles": false
+        }
+    },
+    "interval": 10,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "tera:pyralisk/form",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">=",
+                    "compare_to": 0.1
+                },
+                {
+                    "type": "origins:in_rain"
+                }
+                ]
+            }
+        ]
+    }
+}

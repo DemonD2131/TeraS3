@@ -1,0 +1,70 @@
+{
+    "name": "Hot blessing",
+    "description": "Immune to lava, eat fire, and faster lava speed. You already know what the optimal environment is. LAVA FORM",
+    "type": "origins:multiple",
+    "fireimmune":{
+        "type": "origins:invulnerability",
+        "damage_condition": {
+          "type": "origins:fire"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "tera:pyralisk/form",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+    "eatfire":{
+        "type": "origins:action_over_time",
+    "entity_action":{
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:feed",
+                "food": 1,
+                "saturation": 0
+            },
+            {
+                "type": "origins:block_action_at",
+                "block_action": {
+                    "type": "origins:execute_command",
+                    "command": "fill ~ ~-1 ~ ~ ~ ~ minecraft:air replace minecraft:fire",
+                    "permission_level": 4
+                }
+            }
+        ]
+    },
+    "interval": 20,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+        "type": "origins:in_block",
+        "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:fire"
+        }
+    },
+    {
+        "type": "origins:resource",
+        "resource": "tera:pyralisk/form",
+        "comparison": "==",
+        "compare_to": 0
+    }
+    ]
+        }
+    },
+    "lavaspeed":{
+        "type": "origins:modify_lava_speed",
+        "modifier": {
+            "operation": "addition",
+            "value": 0.4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "tera:pyralisk/form",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    }
+}

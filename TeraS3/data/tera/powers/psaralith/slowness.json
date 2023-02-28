@@ -24,7 +24,7 @@
                         "tag": "minecraft:water"
                     }
                 },
-                "radius": 5,
+                "radius": 2,
                 "shape": "cube",
                 "comparison": ">",
                 "compare_to": 0
@@ -35,7 +35,7 @@
                         "type": "origins:in_tag",
                         "tag": "tera:copper"
                     },
-                    "radius": 5,
+                    "radius": 2,
                     "shape": "cube",
                     "comparison": ">",
                     "compare_to": 0

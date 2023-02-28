@@ -1,0 +1,19 @@
+{
+    "name": "Painful sizzling",
+    "description": "Due to the **boiling pain** you take more damage from fire. WATER FORM",
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:fire"
+    },
+    "modifier": {
+        "name": "Weak to cursed items",
+        "operation": "multiply_total",
+        "value": 1.4
+    },
+    "condition":{
+        "type": "origins:resource",
+        "resource": "tera:pyralisk/form",
+        "compare_to": 1,
+        "comparison": "=="
+    }
+}
