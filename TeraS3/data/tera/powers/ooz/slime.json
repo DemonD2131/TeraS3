@@ -21,7 +21,7 @@
                     "condition": {
                         "type": "origins:resource",
                         "resource": "tera:ooz/slime_resource",
-                        "compare_to": 25,
+                        "compare_to": 33,
                         "comparison": "<="
                     },
                     "action": {
@@ -40,7 +40,7 @@
                     "condition": {
                         "type": "origins:resource",
                         "resource": "tera:ooz/slime_resource",
-                        "compare_to": 75,
+                        "compare_to": 66,
                         "comparison": ">="
                     },
                     "action": {
@@ -66,12 +66,20 @@
             "resource": "tera:ooz/slime_resource",
             "change": 1
         },
-        "interval": 80,
+        "interval": 30,
         "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
             "type": "origins:fluid_height",
             "fluid": "minecraft:water",
             "comparison": ">=",
             "compare_to": 0.1
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
         }
     },
     "loss": {
@@ -79,7 +87,7 @@
         "entity_action": {
             "type": "origins:change_resource",
             "resource": "tera:ooz/slime_resource",
-            "change": -1
+            "change": -2
         },
         "interval": 280,
         "condition": {
@@ -123,6 +131,20 @@
             "fluid": "minecraft:water",
             "comparison": ">=",
             "compare_to": 0.1
+        }
+    },
+    "waterbottle":{
+        "type": "origins:action_on_item_use",
+        "item_condition": {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          }
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "tera:ooz/slime_resource",
+            "change": 15
         }
     }
 }

@@ -15,7 +15,7 @@
     "resource":{
         "type": "origins:resource",
         "min": 0,
-        "max": 15,
+        "max": 10,
         "hud_render": {
             "should_render": true,
             "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
@@ -27,10 +27,10 @@
         "entity_action": {
             "type": "origins:change_resource",
             "resource": "tera:khaquetos/stealth_resource",
-            "change": 15,
+            "change": 10,
             "operation": "set"
         },
-        "cooldown": 600,
+        "cooldown": 700,
         "hud_render": {
             "should_render": true,
             "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",

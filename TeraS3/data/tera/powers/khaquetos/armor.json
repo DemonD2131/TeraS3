@@ -5,7 +5,7 @@
     "modifier": {
         "attribute": "minecraft:generic.armor",
         "operation": "addition",
-        "value": 3
+        "value": 2
     },
     "tick_rate": 10,
     "condition": {

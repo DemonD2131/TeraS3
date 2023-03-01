@@ -4,5 +4,10 @@
 	"description": "(Sneaking)-You can sense the energy fields around the creatures near you while concentrating, alerting you to their locations.",
 	"condition": {
 		"type": "origins:sneaking"
-	}
+	},
+	"bientity_condition": {
+		"type": "origins:distance",
+		"comparison": "<=",
+		"compare_to": 20
+    }
 }
