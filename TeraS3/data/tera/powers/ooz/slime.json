@@ -71,10 +71,10 @@
             "type": "origins:and",
             "conditions": [
                 {
-            "type": "origins:fluid_height",
-            "fluid": "minecraft:water",
-            "comparison": ">=",
-            "compare_to": 0.1
+                "type": "origins:fluid_height",
+                "fluid": "minecraft:water",
+                "comparison": ">=",
+                "compare_to": 0.1
                 },
                 {
                     "type": "origins:sneaking"
@@ -91,9 +91,6 @@
         },
         "interval": 280,
         "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
                     "type": "origins:and",
                     "conditions": [
                 {
@@ -111,12 +108,31 @@
                     "inverted": true
                 }
             ]
+        }
+    },
+    "fire_loss":{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "tera:ooz/slime_resource",
+            "change": -2
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+            "type": "origins:on_fire"
                 },
                 {
-                    "type": "origins:on_fire"
+                    "type": "origins:status_effect",
+                    "effect": "minecraft:fire_resistance",
+                    "min_amplifier": 1,
+                    "inverted": true
                 }
             ]
         }
+
     },
     "feed": {
         "type": "origins:action_over_time",

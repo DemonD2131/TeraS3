@@ -45,5 +45,27 @@
         "key": {
           "key": "key.origins.secondary_active"
         }
+    },
+    "suffocationfix":{
+      "type": "origins:invulnerability",
+      "damage_condition": {
+        "type": "origins:name",
+        "name": "inWall"
+      },
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:power_active",
+                "power": "tera:khaquetos/burrow_sandize"
+            },
+            {
+                "type": "origins:resource",
+                "resource": "tera:khaquetos/form",
+                "comparison": "==",
+                "compare_to": 0
+            }
+        ]
+      }
     }
 }
